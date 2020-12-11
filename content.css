@@ -1,0 +1,21 @@
+header#gb {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+}
+
+header#gb * {
+  color: white!important;
+  fill: white!important;
+}
+
+h2 * {
+
+}
+
+.SGWAac {
+  background: linear-gradient(90deg, rgba(255,0,0,0.5), rgba(0,0,255,0.5));
+}
+
+.SGWAac *:not([role=button]) {
+  background-color: transparent!important;
+  color: white!important;
+}

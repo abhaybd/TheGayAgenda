@@ -1,0 +1,17 @@
+{
+  "name": "The Gay Agenda",
+  "version": "1.0",
+  "description": "Tucker Carlson's worst nightmare",
+  "manifest_version": 2,
+  "permissions": [],
+  "content_scripts": [
+    {
+      "js": ["jquery-3.5.1.min.js", "content.js"],
+      "css": ["content.css"],
+      "matches": ["https://calendar.google.com/*", "http://calendar.google.com/*"]
+    }
+  ],
+  "browser_action":{
+    "default_popup": "popup.html"
+  }
+}
