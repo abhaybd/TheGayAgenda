@@ -2,8 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>The Gay Agenda</title>
         <link rel="stylesheet" type="text/css" href="popup.css">
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="popup.js"></script>
     </head>
     <body>
         <div id="content">
@@ -94,7 +96,13 @@
                     <input type="radio" name="theme" value="custom" id="custom"/>
                     <label for="custom">Custom</label>
                 </div>
+                <div>
+                    <button id="apply-button">Apply</button>
+                </div>
             </fieldset>
+        </div>
+        <div id="footer">
+            <div id="notification" hidden>Refresh the page to see the new theme!</div>
         </div>
     </body>
 </html>
