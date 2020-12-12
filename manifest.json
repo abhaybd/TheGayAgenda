@@ -13,6 +13,7 @@
         "content.js"
       ],
       "css": [
+        "themes.css",
         "content.css"
       ],
       "matches": [
