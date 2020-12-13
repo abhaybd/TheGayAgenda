@@ -6,6 +6,11 @@
   "permissions": [
     "storage"
   ],
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "192": "images/icon192.png"
+  },
   "content_scripts": [
     {
       "js": [
@@ -23,6 +28,11 @@
     }
   ],
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "192": "images/icon192.png"
+    }
   }
 }

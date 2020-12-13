@@ -7,7 +7,8 @@
 }
 
 .theme-bi {
-    background: linear-gradient(90deg, #D60270, #D60270, #9B4F96, #0038A8, #0038A8);
+    /*noinspection CssInvalidFunction*/
+    background: linear-gradient(90deg, #D60270, #9B4F96 45% 55%, #0038A8);
 }
 
 .theme-trans {
