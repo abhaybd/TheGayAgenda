@@ -1,5 +1,11 @@
-.header-text,
-header#gb div.BXL82c * {
+header#gb a[aria-label=Calendar] span.gb_fe.gb_Xc, /* Calendar title */
+header#gb div.BXL82c *, /* Month/Year label */
+header#gb span.DPvwYc.NhjcAb, /* Search icon */
+header#gb div.XyKLOd span.NlWrkb.snByac, /* Text of the month button */
+header#gb div.XyKLOd span.DPvwYc.xmVoP.SGNdae, /* Down icon in the month button */
+header#gb span.RveJvd.snByac, /* Today button */
+header#gb span[role=heading] /* Title of subpages (settings, search, etc) */
+{
   color: white !important;
   text-shadow: 0.05em 0 black,
   0 0.05em black,
@@ -11,34 +17,10 @@ header#gb div.BXL82c * {
   0.05em 0.05em black;
 }
 
-.header-svg {
+header#gb div[aria-label="Main drawer"] svg, /* Sandwich icon */
+header#gb div.gb_Fe.gb_Ee svg, /* Help and settings icons */
+header#gb div[aria-label="Go back"] svg, /* Back arrow */
+header#gb a[aria-label="Google apps"] svg /* Google apps button */
+{
   fill: white !important;
 }
-
-/*header#gb svg {*/
-/*  fill: white;*/
-/*}*/
-
-/*header#gb button[aria-label=Search] svg,*/
-/*header#gb button[aria-label="Clear search"] svg,*/
-/*header#gb button[title="Search options"] svg {*/
-/*  fill: #5f6368;*/
-/*}*/
-
-/*.SGWAac {*/
-/*  background: linear-gradient(90deg, rgba(255,0,0,0.5), rgba(0,0,255,0.5));*/
-/*}*/
-
-/*.SGWAac *:not([role=button]) {*/
-/*  background-color: transparent!important;*/
-/*  color: white!important;*/
-/*  text-shadow:*/
-/*          0.05em 0 black,*/
-/*          0 0.05em black,*/
-/*          -0.05em 0 black,*/
-/*          0 -0.05em black,*/
-/*          -0.05em -0.05em black,*/
-/*          -0.05em 0.05em black,*/
-/*          0.05em -0.05em black,*/
-/*          0.05em 0.05em black;*/
-/*}*/

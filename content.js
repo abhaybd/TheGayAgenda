@@ -9,7 +9,7 @@ function setTheme(theme, oldTheme = undefined) {
     header.addClass(className);
 }
 
-chrome.storage.onChanged.addListener(function (changes, namespace) {
+chrome.storage.onChanged.addListener(function (changes) {
     if ("theme" in changes) {
         setTheme(changes.theme.newValue, changes.theme.oldValue);
     }
@@ -21,11 +21,4 @@ $(function () {
     chrome.storage.local.get("theme", function (obj) {
         setTheme(obj.theme ?? "lgbt");
     });
-
-    setTimeout( function () {
-        $("header#gb :not(.gb_Ca *, [role=menu] *, [aria-label=\"Account Information\"] *, :has(*))")
-            .addClass("header-text");
-        $("header#gb div.BXL82c").addClass("header-text");
-        $("header#gb svg:not([aria-label=\"Account Information\"] *, #aso_search_form_anchor *)").addClass("header-svg");
-    }, 500);
 })
