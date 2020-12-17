@@ -8,7 +8,7 @@
 }
 
 body {
-    min-width: 300px;
+    min-width: 400px;
     background: linear-gradient(45deg, red, orange, yellow, green, blue, purple);
     color: white;
 }
@@ -20,6 +20,7 @@ body {
 #radio-parent {
     line-height: 30px;
     background-color: rgba(0, 0, 0, 0.3);
+    width: 180px;
 }
 
 label > span {
@@ -27,7 +28,7 @@ label > span {
     top: -2px;
 }
 
-#apply-button {
+.fill-width {
     width: 100%;
 }
 
@@ -38,5 +39,28 @@ label > span {
     right: 0;
     line-height: normal;
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+#custom-colors {
+    padding-left: 25px;
+    margin: 10px 0 15px;
+}
+
+.color-input {
+    padding: 3px 0;
+    line-height: 15px;
+    width: 9ch;
+}
+
+.delete-button {
+    position: relative;
+    top: 2px;
+    width: 25px;
+    padding: 0 1px;
+}
+
+.delete-button svg {
+    position: relative;
+    top: 2px;
 }
 
