@@ -64,3 +64,11 @@ label > span {
     top: 2px;
 }
 
+.color-preview {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
