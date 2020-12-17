@@ -41,17 +41,39 @@ $(function () {
         } else {
             inserted.removeAttr("hidden");
         }
+        return inserted;
     }
 
     chrome.storage.local.get("theme", function (obj) {
         let theme = obj.theme ?? "lgbt";
-        $("#" + theme).prop("checked", true);
+        const elem = $("#" + theme);
+        elem.prop("checked", true);
+
+        chrome.storage.local.get("custom_colors", function(obj) {
+            if (obj.custom_colors) {
+                $("#custom-color-inputs").empty();
+                const colors = obj.custom_colors;
+                for (let color of colors) {
+                    let input = addColorInput(false);
+                    input.find(".color-input").first().val(color).trigger("input");
+                }
+            }
+            elem.trigger("change");
+        });
 
         $("#apply-button").on("click", function () {
-            // TODO: add code to handle custom theme
             let theme = $("input[name=theme]:checked").val();
             chrome.storage.local.set({"theme": theme});
             console.log("New theme: " + theme);
+            if (theme === "custom") {
+                let colors = $("input.color-input").map((i,e) => $(e).val());
+                let colorList = [];
+                for (let i = 0; i < colors.length; i++) {
+                    colorList.push(colors[i]);
+                }
+                console.log("Custom color list: " + colorList);
+                chrome.storage.local.set({"custom_colors": colorList});
+            }
         });
     });
 
@@ -73,7 +95,6 @@ $(function () {
 
         // update the element attributes
         elem.val(value);
-        elem.attr("data-prev-val", value);
 
         // update the cursor position
         elem.setCursorPos(cursorPos);
