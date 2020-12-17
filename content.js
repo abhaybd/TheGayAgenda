@@ -4,6 +4,7 @@ function setTheme(theme, oldTheme = undefined) {
         let className = "theme-" + oldTheme;
         header.removeClass(className);
     }
+    // TODO: handle custom theme (dynamically create style sheet I think)
     let className = "theme-" + theme;
     console.log("Setting theme: " + className);
     header.addClass(className);
