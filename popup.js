@@ -1,12 +1,12 @@
 // shamelessly copied from stack overflow
-$.fn.setCursorPos = function(pos) {
-    return this.each(function() {
-        if('selectionStart' in this) {
+$.fn.setCursorPos = function (pos) {
+    return this.each(function () {
+        if ('selectionStart' in this) {
             this.selectionStart = pos;
             this.selectionEnd = pos;
-        } else if(this.setSelectionRange) {
+        } else if (this.setSelectionRange) {
             this.setSelectionRange(pos, pos);
-        } else if(this.createTextRange) {
+        } else if (this.createTextRange) {
             const range = this.createTextRange();
             range.collapse(true);
             range.moveEnd('character', pos);
@@ -48,7 +48,7 @@ $(function () {
         return inserted;
     }
 
-    function notify(message, duration=1500) {
+    function notify(message, duration = 1500) {
         const notification = $("<div>").text(message).prop("hidden", true);
         $("#notifications").append(notification);
         notification.slideDown(400, () => setTimeout(() => notification.slideUp(), duration));
@@ -59,7 +59,7 @@ $(function () {
         const elem = $("#" + theme);
         elem.prop("checked", true);
 
-        chrome.storage.local.get("custom_colors", function(obj) {
+        chrome.storage.local.get("custom_colors", function (obj) {
             if (obj.custom_colors) {
                 $("#custom-color-inputs").empty();
                 const colors = obj.custom_colors;
@@ -76,7 +76,7 @@ $(function () {
             chrome.storage.local.set({"theme": theme});
             console.log("New theme: " + theme);
             if (theme === "custom") {
-                let colors = $("input.color-input").map((i,e) => $(e).val());
+                let colors = $("input.color-input").map((i, e) => $(e).val());
                 let colorList = [];
                 for (let i = 0; i < colors.length; i++) {
                     let color = colors[i];

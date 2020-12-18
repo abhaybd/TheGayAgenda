@@ -32,7 +32,7 @@ chrome.storage.onChanged.addListener(function (changes) {
 $(function () {
     $("[aria-label=Calendar]").first().children().last().text("The Gay Agenda");
 
-    chrome.storage.local.get("custom_colors", function(obj) {
+    chrome.storage.local.get("custom_colors", function (obj) {
         if (obj.custom_colors) {
             defineCustomStyle(obj.custom_colors);
         }
