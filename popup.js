@@ -16,6 +16,10 @@ $.fn.setCursorPos = function(pos) {
     });
 };
 
+function isColor(hexCode) {
+    return /^#([0-9A-F]{3}){1,2}$/.test(hexCode);
+}
+
 $(function () {
     const inputTemplate = $("#custom-fields-template").remove().clone();
     inputTemplate.removeAttr("id");
@@ -25,7 +29,7 @@ $(function () {
     }
 
     function removeInput() {
-        if (numInputs() !== 1) {
+        if (numInputs() > 2) {
             $(this).parent().slideUp(400, function () {
                 $(this).remove();
             });
@@ -42,6 +46,12 @@ $(function () {
             inserted.removeAttr("hidden");
         }
         return inserted;
+    }
+
+    function notify(message, duration=1500) {
+        const notification = $("<div>").text(message).prop("hidden", true);
+        $("#notifications").append(notification);
+        notification.slideDown(400, () => setTimeout(() => notification.slideUp(), duration));
     }
 
     chrome.storage.local.get("theme", function (obj) {
@@ -69,11 +79,22 @@ $(function () {
                 let colors = $("input.color-input").map((i,e) => $(e).val());
                 let colorList = [];
                 for (let i = 0; i < colors.length; i++) {
-                    colorList.push(colors[i]);
+                    let color = colors[i];
+                    // default color is black
+                    if (color.length === 0) {
+                        color = "#000000";
+                    }
+                    if (isColor(color)) {
+                        colorList.push(color);
+                    } else {
+                        notify("Invalid format for custom color!");
+                        return;
+                    }
                 }
                 console.log("Custom color list: " + colorList);
                 chrome.storage.local.set({"custom_colors": colorList});
             }
+            notify("Successfully applied new theme!");
         });
     });
 
@@ -101,7 +122,7 @@ $(function () {
 
         // set the color of the color preview
         let color = value.length === 0 ? "#000000" : value;
-        color = /^#([0-9A-F]{3}){1,2}$/.test(color) ? color : "transparent";
+        color = isColor(color) ? color : "transparent";
         elem.siblings(".color-preview").css("background", color);
     });
 
@@ -113,6 +134,7 @@ $(function () {
         const elem = $("#custom-colors");
         if (this.id === "custom") {
             if (numInputs() === 0) {
+                addColorInput(false);
                 addColorInput(false);
             }
             elem.slideDown();

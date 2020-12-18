@@ -32,13 +32,15 @@ label > span {
     width: 100%;
 }
 
-#notification {
+#notifications {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     line-height: normal;
     background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 15px;
 }
 
 #custom-colors {
