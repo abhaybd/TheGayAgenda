@@ -23,4 +23,5 @@ header#gb div[aria-label="Go back"] svg, /* Back arrow */
 header#gb a[aria-label="Google apps"] svg /* Google apps button */
 {
   fill: white !important;
+  filter: drop-shadow(1px 0 black) drop-shadow(0 1px black) drop-shadow(-1px 0 black) drop-shadow(0 -1px black);
 }
