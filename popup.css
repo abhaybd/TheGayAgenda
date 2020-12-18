@@ -42,8 +42,8 @@ label > span {
 }
 
 #custom-colors {
-    padding-left: 25px;
-    margin: 10px 0 15px;
+    padding: 0 12px;
+    margin: 0 0 15px;
 }
 
 .color-input {
