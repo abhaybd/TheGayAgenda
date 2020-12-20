@@ -3,7 +3,7 @@ header#gb div.BXL82c *, /* Month/Year label */
 header#gb span.DPvwYc.NhjcAb, /* Search icon */
 header#gb div.XyKLOd span.NlWrkb.snByac, /* Text of the month button */
 header#gb div.XyKLOd span.DPvwYc.xmVoP.SGNdae, /* Down icon in the month button */
-header#gb span.RveJvd.snByac, /* Today button */
+header#gb span.CwaK9 > span.RveJvd.snByac, /* Today button */
 header#gb span[role=heading] /* Title of subpages (settings, search, etc) */
 {
   color: white !important;

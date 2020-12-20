@@ -1,7 +1,7 @@
 {
   "name": "The Gay Agenda",
   "version": "0.1",
-  "description": "Tucker Carlson's worst nightmare",
+  "description": "Rethemes Google Calendar to have multiple LGBTQ+ inspired color schemes based on several pride flags.",
   "manifest_version": 2,
   "permissions": [
     "storage"
