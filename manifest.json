@@ -1,8 +1,8 @@
 {
   "name": "The Gay Agenda",
-  "version": "0.1",
+  "version": "1.0",
   "description": "Rethemes Google Calendar to have multiple LGBTQ+ inspired color schemes based on several pride flags.",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "permissions": [
     "storage"
   ],
@@ -27,7 +27,7 @@
       ]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "images/icon16.png",

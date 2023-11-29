@@ -1,27 +1,16 @@
-header#gb a[aria-label=Calendar] span.gb_fe.gb_Xc, /* Calendar title */
-header#gb div.BXL82c *, /* Month/Year label */
-header#gb span.DPvwYc.NhjcAb, /* Search icon */
-header#gb div.XyKLOd span.NlWrkb.snByac, /* Text of the month button */
-header#gb div.XyKLOd span.DPvwYc.xmVoP.SGNdae, /* Down icon in the month button */
-header#gb span.CwaK9 > span.RveJvd.snByac, /* Today button */
-header#gb span[role=heading] /* Title of subpages (settings, search, etc) */
-{
+header#gb * {
   color: white !important;
   text-shadow: 0.05em 0 black,
-  0 0.05em black,
-  -0.05em 0 black,
-  0 -0.05em black,
-  -0.05em -0.05em black,
-  -0.05em 0.05em black,
-  0.05em -0.05em black,
-  0.05em 0.05em black;
+    0 0.05em black,
+    -0.05em 0 black,
+    0 -0.05em black,
+    -0.05em -0.05em black,
+    -0.05em 0.05em black,
+    0.05em -0.05em black,
+    0.05em 0.05em black;
 }
 
-header#gb div[aria-label="Main drawer"] svg, /* Sandwich icon */
-header#gb div.gb_Fe.gb_Ee svg, /* Help and settings icons */
-header#gb div[aria-label="Go back"] svg, /* Back arrow */
-header#gb a[aria-label="Google apps"] svg /* Google apps button */
-{
+header#gb svg {
   fill: white !important;
   filter: drop-shadow(1px 0 black) drop-shadow(0 1px black) drop-shadow(-1px 0 black) drop-shadow(0 -1px black);
 }

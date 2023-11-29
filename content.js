@@ -30,7 +30,10 @@ chrome.storage.onChanged.addListener(function (changes) {
 });
 
 $(function () {
-    $("[aria-label=Calendar]").first().children().last().text("The Gay Agenda");
+    let elems = document.querySelectorAll("[aria-label='Calendar'] [role='heading']");
+    for (const elem of elems) {
+        elem.textContent = "The Gay Agenda";
+    }
 
     chrome.storage.local.get("custom_colors", function (obj) {
         if (obj.custom_colors) {
