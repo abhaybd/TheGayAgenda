@@ -16,7 +16,7 @@ function defineCustomStyle(colors) {
         elem.attr("id", "tga-custom-style");
         elem.appendTo(document.head);
     }
-    elem.text(`.theme-custom { background: linear-gradient(90deg, ${colors.join(", ")}); }`);
+    elem.text(`.theme-custom { background: linear-gradient(90deg, ${colors.join(", ")}) !important; }`);
     console.log("Custom style added!");
 }
 
